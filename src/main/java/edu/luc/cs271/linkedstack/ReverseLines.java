@@ -10,14 +10,17 @@ public class ReverseLines {
 
 
     final Scanner input = new Scanner(System.in);
+    LinkedStack<String> reverser = new LinkedStack<String>();
+
     while (input.hasNextLine()) {
       final String line = input.nextLine();
-
-
+      reverser.push(line);
 
     }
+  while (!reverser.isEmpty()) {
+      System.out.println(reverser.pop());
 
-
+}
 
   }
 }
