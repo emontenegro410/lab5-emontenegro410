@@ -7,11 +7,16 @@ import java.util.NoSuchElementException;
 
 public class LinkedStack<E> implements IStack<E> {
 
-  /** The topmost node of this stack. The stack gets pushed down from here. */
+  /** The top most node of this stack. The stack gets pushed down from here. */
   private Node<E> top;
 
-  // TODO why don't we need an explicit constructor?
-
+  // TODO why don't we need an explicit constructor?  
+  /** Answer: LinkedStack doesn't require an explicit 
+      constructor because the appropriate constructor methods are in the Node class, 
+      and they are called when needed during the push() function. The interface also 
+      gives us the appropriate methods.
+**/
+  
   @Override
   public E push(final E obj) {
     // TODO
