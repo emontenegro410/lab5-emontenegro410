@@ -1,47 +1,44 @@
 package edu.luc.cs271.linkedstack;
 
-import edu.luc.cs271.linkedstack.IStack;
 
-import edu.luc.cs271.linkedstack.Node;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
-
 
 public class LinkedStack<E> implements IStack<E> {
 
   /** The top most node of this stack. The stack gets pushed down from here. */
   private Node<E> top;
 
-  // TODO why don't we need an explicit constructor?  
-  /** Answer: LinkedStack doesn't require an explicit 
-      constructor because the appropriate constructor methods are in the Node class, 
-      and they are called when needed during the push() function. The interface also 
-      gives us the appropriate methods.
-**/
-  
+  // TODO why don't we need an explicit constructor?
+  /**
+   * Answer: LinkedStack doesn't require an explicit constructor because the appropriate constructor
+   * methods are in the Node class, and they are called when needed during the push() function. The
+   * interface also gives us the appropriate methods.
+   */
   @Override
   public E push(final E obj) {
     // TODO
-     top = new Node<>(obj, top);
+    top = new Node<>(obj, top);
     return obj;
   }
 
   @Override
   public E peek() {
     // TODO
-   if (isEmpty()) {
+    if (isEmpty()) {
       throw new NoSuchElementException();
     } else {
       return top.data;
     }
   }
 
-  //Edit
+  // Edit
+
   @Override
   public E pop() {
     // TODO
-       if (isEmpty()) {
+    if (isEmpty()) {
       throw new NoSuchElementException();
     } else {
       E result = top.data;
@@ -53,16 +50,21 @@ public class LinkedStack<E> implements IStack<E> {
   @Override
   public boolean isEmpty() {
     // TODO
-      return top == null;
+    if (top == null) {
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 
   @Override
   public List<E> asList() {
     // TODO implement using an ArrayList preallocated with the right size
     // TODO add any instance variable(s) required to support this
-  List<E> temp = new ArrayList<E>();
-    Node<E> travel=top;
-    while (travel!= null) {
+    List<E> temp = new ArrayList<E>();
+    Node<E> travel = top;
+    while (travel != null) {
       temp.add(travel.data);
       travel = travel.next;
     }
