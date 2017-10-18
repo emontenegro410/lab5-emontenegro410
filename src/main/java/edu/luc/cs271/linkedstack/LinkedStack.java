@@ -1,5 +1,8 @@
 package edu.luc.cs271.linkedstack;
 
+import edu.luc.cs271.linkedstack.IStack;
+
+import edu.luc.cs271.linkedstack.Node;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
@@ -44,12 +47,7 @@ public class LinkedStack<E> implements IStack<E> {
   @Override
   public boolean isEmpty() {
     // TODO
-    if(top==null){
-      return true;
-    }
-    else{
-    return false;
-    }
+      return top == null;
   }
 
   @Override
