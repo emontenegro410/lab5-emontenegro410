@@ -30,7 +30,7 @@ public class LinkedStack<E> implements IStack<E> {
    if (isEmpty()) {
       throw new NoSuchElementException();
     } else {
-      return top;
+      return top.data;
     }
   }
 
